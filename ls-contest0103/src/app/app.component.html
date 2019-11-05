@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="question-dashboard">
+
+        <app-controller (modalOpType)="changeModalState($event)"></app-controller>
+
+        <app-employees (modalEvent)="changeModalState($event)"></app-employees>
+
+        <app-modal [opType]="modalOpType" [index]="index" [employee]="employee"></app-modal>
+
+      </div>
+    </div>
+  </div>
+</div>

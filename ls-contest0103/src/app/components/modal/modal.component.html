@@ -1,0 +1,52 @@
+<div class="modal fade" id="addEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="addEmployeeModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header pt-3 pb-2">
+                <h5 class="modal-title" id="exampleModalCenterTitle">{{opType}} Employee</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row ">
+                        <div class="form-group col-md-6">
+                            <label for="" class="mb-1">Name</label>
+                            <input type="text" class="form-control" placeholder="Enter" name="name" [(ngModel)]="employee.name" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="" class="mb-1">Gender</label>
+                            <select class="form-control" id="exampleFormControlSelect1" name="gender" [(ngModel)]="employee.gender" required>
+                                <option>Select</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="" class="mb-1">Age</label>
+                            <input type="number" class="form-control" placeholder="Enter" name="age" [(ngModel)]="employee.age" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="" class="mb-1">Designation</label>
+                            <input type="text" class="form-control" placeholder="Enter" name="designation" [(ngModel)]="employee.designation" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="" class="mb-1">Department</label>
+                            <input type="text" class="form-control" placeholder="Enter" name="department" [(ngModel)]="employee.department" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="" class="mb-1">Joining Date</label>
+                            <input type="date" class="form-control" placeholder="" name="joiningDate" [(ngModel)]="employee.joiningDate" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Cancel</button>
+                <button *ngIf="opType==='Add'" type="button" class="btn btn-success btn-sm" (click)="addEmployee()">Save</button>
+                <button *ngIf="opType==='Edit'" type="button" class="btn btn-success btn-sm" (click)="editEmployee()" data-dismiss="modal">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
